@@ -1,0 +1,30 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block container %}
+{{error}}
+
+
+
+<form action="{% url 'adhardata' %}" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+ 
+  
+    
+    <input type="Submit" class="btn btn-success" vale="button">
+    <a href="/" class="btn btn-info">Back To Home</a>
+</form>
+
+<form action="{% url 'student_form' %}" method="post">
+  {% csrf_token %}
+  {{form1.as_p}}
+  
+    
+    <input type="Submit" class="btn btn-success" vale="button">
+    <a href="/" class="btn btn-info">Back To Home</a>
+</form>
+
+{% endblock container %}
+
+
